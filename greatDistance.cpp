@@ -4,6 +4,7 @@ using namespace std;
 #define lat_user 19.2856
 #define lon_user 72.8691
 #define earth_radius 6371.0
+#define N 30.0000
 
 ifstream cabs_list("input.json");
 ofstream output("output.json");
@@ -18,7 +19,7 @@ struct json {
         double angle = acos((sin(lat_user)*sin(lat_cab)) + (cos(lat_user)*cos(lat_cab)*cos(delta))); 
         double distance = 2*M_PI*earth_radius*(angle/360.0);
 
-        if(distance<=50.0000){
+        if(distance<=N){
             cout<<"User id : "<<id<<endl;
             cout<<"User name : "<<name<<endl;
             cout<<distance<<endl;
